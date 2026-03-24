@@ -27,7 +27,7 @@ const SearchPage = () => {
         setError(""); // Reset error message
 
         try {
-            const response = await fetch(`http://localhost:5000/api/user/search?query=${query}`, {
+            const response = await fetch(`/api/user/search?query=${query}`, {
                 method: "GET",
                 headers: {
                     Authorization: authToken,

@@ -11,7 +11,7 @@ export const RightPanel = () => {
     useEffect(() => {
         const fetchTopCreators = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/user/top-creators", {
+                const response = await fetch("/api/user/top-creators", {
                     method: "GET",
                     headers: {
                         Authorization: authToken,

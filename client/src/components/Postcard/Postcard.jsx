@@ -3,7 +3,7 @@ import { Bookmark, ChevronDown, ChevronUp, Heart } from "lucide-react";
 import { UserContext } from "./../../contexts/UserState";
 import { Link } from "react-router-dom";
 
-const URL = "http://localhost:5000";
+const URL = "";
 
 export const Postcard = (props) => {
     const [isExpanded, setIsExpanded] = useState(false);

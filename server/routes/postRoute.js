@@ -36,21 +36,8 @@ router.get(
 
 			const followingUserPosts = await Promise.all(
 				followingList.map(async (userId) => {
-					const response = await fetch(
-						`http://localhost:5000/api/post/fetchUserAllPosts/${userId}`,
-						{
-							method: "GET",
-							headers: { Authorization: authToken },
-						}
-					);
-
-					if (!response.ok)
-						throw new Error(
-							`Failed to fetch posts for user ${userId}`
-						);
-
-					const data = await response.json();
-					return data;
+					const userPosts = await Post.find({ postedBy: userId });
+					return userPosts;
 				})
 			);
 

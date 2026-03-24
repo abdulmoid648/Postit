@@ -16,13 +16,10 @@ app.use(express.json());
 app.use("/api/user", require("./routes/userRoute.js"));
 app.use("/api/post", require("./routes/postRoute.js"));
 
-// Serve static files from the Vite build directory
-app.use(express.static(path.join(__dirname, "dist")));
+// Export app for Vercel serverless integration
+module.exports = app;
 
-// Handle React Router routes (redirect unknown routes to index.html)
-app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
-
-// Start server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start server locally (Vercel sets NODE_ENV to production)
+if (process.env.NODE_ENV !== "production") {
+	app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}

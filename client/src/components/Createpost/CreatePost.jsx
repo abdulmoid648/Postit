@@ -23,7 +23,7 @@ const CreatePost = () => {
         setError(null);
 
         try {
-            const response = await fetch("http://localhost:5000/api/post/createpost", {
+            const response = await fetch("/api/post/createpost", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

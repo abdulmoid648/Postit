@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from "react";
-const URL = "http://localhost:5000"
+const URL = ""
 
 export const UserContext = createContext();
 

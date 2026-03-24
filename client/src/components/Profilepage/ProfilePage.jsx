@@ -12,7 +12,7 @@ const ProfilePage = () => {
     const isCurrentUser = currentUser.id === userId;
     const [isFollowing, setIsFollowing] = useState(false);
     const [followersCount, setFollowersCount] = useState(0);
-    const URL = "http://localhost:5000";
+    const URL = "";
 
     useEffect(() => {
         const fetchData = async () => {

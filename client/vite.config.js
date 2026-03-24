@@ -11,6 +11,9 @@ export default defineConfig({
 	},
 	server: {
 		historyApiFallback: true,
+		proxy: {
+			"/api": "http://localhost:5000",
+		},
 	},
 	preview: {
 		historyApiFallback: true,
